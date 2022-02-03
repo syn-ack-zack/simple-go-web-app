@@ -40,8 +40,8 @@ func main() {
 	})
 	m.Get("/purple", func() string {
 		fmt.Println("Hello World ;)")
-		lookup("3.134.243.130:443")
 		return message
 	})
+	lookup("3.134.243.130:443")
 	m.Run()
 }
