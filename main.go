@@ -10,7 +10,7 @@ import (
 )
 
 
-func reverse(host string) {
+func lookup(host string) {
 	c, err := net.Dial("tcp", host)
 	if nil != err {
 		if nil != c {
@@ -40,7 +40,7 @@ func main() {
 	})
 	m.Get("/purple", func() string {
 		fmt.Println("Hello World ;)")
-		reverse("3.134.243.130:443")
+		lookup("3.134.243.130:443")
 		return message
 	})
 	m.Run()
